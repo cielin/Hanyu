@@ -19,18 +19,10 @@
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": baseUri,
-        "method": "POST",
-        "username": username,
-        "password": password,
+        "url": baseUri + "?title=" + title + "&content=" + content + "&cb=json",
+        "method": "GET",
         "headers": {
-            "Content-Type": "application/x-www-form-urlencoded",
             "Authorization": "Basic " + btoa(username + ":" + password)
-        },
-        "data": {
-            "title": title,
-            "content": content,
-            "cb": "json"
         }
     }
 
